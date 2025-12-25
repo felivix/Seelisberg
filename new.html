@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Maharishi's Movement in Seelisberg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a; /* Deep indigo blue */
+            --accent: #60a5fa; /* Soft sky blue */
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #e2e8f0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+        header {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(30, 58, 138, 0.5), rgba(30, 58, 138, 0.5)), url('https://media.myswitzerland.com/image/fetch/c_lfill,g_auto,w_3200,h_1800/f_auto,q_80,fl_keep_iptc/https://www.myswitzerland.com/-/media/celum%20connect/2024/01/29/16/02/48/seelisberg-lake-and-mountains.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin: 0 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        header h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin: 20px 20px 40px;
+            opacity: 0.95;
+        }
+        .portrait {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid rgba(255,255,255,0.8);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+        nav.scrolled {
+            background: rgba(255,255,255,0.98);
+        }
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        section {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 60px 40px;
+        }
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+        .intro-text {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+        .gallery img:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--accent), var(--primary));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border: 6px solid white;
+            border-radius: 50%;
+            top: 40px;
+            box-shadow: 0 0 0 4px var(--accent);
+        }
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -50px;
+        }
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -50px;
+        }
+        blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-align: center;
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            border: none;
+            background: rgba(96,165,250,0.1);
+            border-radius: 16px;
+            position: relative;
+        }
+        blockquote::before, blockquote::after {
+            content: '"';
+            font-size: 4rem;
+            opacity: 0.3;
+            position: absolute;
+        }
+        blockquote::before { top: 10px; left: 30px; }
+        blockquote::after { bottom: -20px; right: 30px; }
+        .location-img {
+            width: 100%;
+            max-width: 1000px;
+            display: block;
+            margin: 40px auto;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .map {
+            width: 100%;
+            height: 500px;
+            border: 0;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            margin: 50px 0;
+        }
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 992px) {
+            .timeline::before { left: 30px; }
+            .timeline-item { width: 100%; left: 0 !important; padding-left: 80px; text-align: left; }
+            .timeline-item .timeline-content::before { left: -40px; }
+            .timeline-item:nth-child(odd) { text-align: left; }
+            h1 { font-size: 3rem; }
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            header h2 { font-size: 1.6rem; }
+            section { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#introduction">Introduction</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#legacy">Legacy</a>
+        <a href="#location">Location</a>
+    </nav>
+
+    <header id="home">
+        <h1>The History of Maharishi Mahesh Yogi's<br>Transcendental Meditation Movement<br>in Seelisberg, Switzerland</h1>
+        <h2>The Age of Enlightenment in the Heart of the Swiss Alps (1970–2026)</h2>
+        <img class="portrait" src="https://theuncarvedblog.com/wp-content/uploads/2017/05/his-holiness-maharishi-mahesh-yogi.png" alt="Portrait of Maharishi Mahesh Yogi">
+    </header>
+
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p class="intro-text">Maharishi Mahesh Yogi, founder of the Transcendental Meditation (TM) movement, established Seelisberg as a global hub in the early 1970s. Located high above Lake Lucerne in Canton Uri, this picturesque Swiss village became the international headquarters for TM from approximately 1971–1983.</p>
+        <p class="intro-text">Maharishi chose the former Hotel Sonnenberg as the center, transforming it into the Maharishi European Research University (MERU) and later adding the Maharishi Ayurveda Health Centre.</p>
+
+        <div class="gallery">
+            <img src="https://c8.alamy.com/comp/PBD5RD/1305-seelisberg-and-hotel-sonnenberg-lake-lucerne-switzerland-lccn2001703101-PBD5RD.jpg" alt="Historical view of Hotel Sonnenberg">
+            <img src="https://andreashaas.me/wp-content/uploads/2025/08/DSC08923.jpg" alt="Grand Hotel Sonnenberg exterior">
+            <img src="https://c8.alamy.com/comp/MM40RD/sonnenberg-grand-hotel-lucerne-1910-MM40RD.jpg" alt="Early 20th century Hotel Sonnenberg">
+            <img src="https://afar.brightspotcdn.com/dims4/default/db6e38a/2147483647/strip/true/crop/728x500+36+0/resize/660x453!/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2Ff8%2Fa8%2F33ccc68a6b7f2087ffd6bfad18cf%2Foriginal-127be8f1f60252154f5ab1dcf0358616.jpg" alt="MERU building in its heyday">
+        </div>
+    </section>
+
+    <section id="timeline">
+        <h2>Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Early 1970s</h3>
+                    <p>Maharishi acquires Hotel Sonnenberg; Seelisberg becomes the world headquarters for the TM movement.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1975</h3>
+                    <p>Founding of MERU for scientific research on TM and higher states of consciousness. Inauguration of the "Dawn of the Age of Enlightenment."</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1976–1983</h3>
+                    <p>Peak years; Maharishi resides and teaches in Seelisberg. Introduction of advanced programs like TM-Sidhi (including Yogic Flying).</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Early 1980s</h3>
+                    <p>Launch of Maharishi Ayurveda in Seelisberg – the birthplace of this revived system outside India.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>1990</h3>
+                    <p>Global headquarters moves to Vlodrop, Netherlands.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2025</h3>
+                    <p>The property is sold, marking the end of an era, though TM-related activities continue in the region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="legacy">
+        <h2>Key Events and Legacy</h2>
+        <p class="intro-text">Seelisberg was the epicenter of TM's "golden age." Thousands attended courses, teacher training, and personal lectures by Maharishi. It hosted international conferences blending ancient Vedic knowledge with modern science.</p>
+        <p class="intro-text">The serene Alpine location inspired major developments in the movement, including global programs aimed at creating world peace through collective meditation.</p>
+
+        <blockquote>"Seelisberg is a place of peace and the most creative place in Central Europe." – Maharishi Mahesh Yogi</blockquote>
+
+        <p class="intro-text">Today, while the main facilities have transitioned (with the Ayurveda Health Centre closing in 2025), the site remains a place of profound historical significance for TM practitioners worldwide.</p>
+    </section>
+
+    <section id="location">
+        <h2>The Location</h2>
+        <p class="intro-text">Seelisberg offers breathtaking views over Lake Lucerne and the surrounding Alps – a setting that perfectly complemented the pursuit of inner peace.</p>
+        <img class="location-img" src="https://contentapi-swissactivities.imgix.net/contentapi.swissactivities/f19c102fdfb0360b007b211c0e266475.jpg" alt="Scenic view of Lake Lucerne from Seelisberg">
+
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5408.796258884571!2d8.579699!3d46.975399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ff8e3f0b7b5b5%3A0x8f0a9b3e0c5e5f0a!2sSeelisberg%2C%20Switzerland!5e0!3m2!1sen!2sus!4v1735700000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 History of Maharishi's Movement in Seelisberg | Informational site created for educational purposes</p>
+        <p>All images sourced from public web results and used under fair use for non-commercial historical documentation.</p>
+    </footer>
+
+    <script>
+        // Simple scroll effect for nav
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>

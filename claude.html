@@ -57,7 +57,8 @@
             justify-content: center;
             text-align: center;
             padding: 4rem 2rem;
-            background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 100%);
+            background: linear-gradient(135deg, rgba(245, 241, 232, 0.95) 0%, rgba(245, 241, 232, 0.85) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%236B7456;stop-opacity:0.3"/><stop offset="100%" style="stop-color:%23D4915E;stop-opacity:0.2"/></linearGradient></defs><rect fill="url(%23grad1)" width="1200" height="800"/><path d="M0,400 Q300,200 600,350 T1200,300 L1200,800 L0,800 Z" fill="%233A4A35" opacity="0.15"/><circle cx="900" cy="150" r="80" fill="%23D4A574" opacity="0.2"/><circle cx="300" cy="600" r="60" fill="%23C75B3F" opacity="0.15"/></svg>') center/cover;
             overflow: hidden;
         }
         
@@ -245,6 +246,39 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px 8px 0 0;
+            opacity: 0.12;
+        }
+        
+        .timeline-item:nth-child(1) .timeline-content::before {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect fill="%23C75B3F" width="400" height="200"/><circle cx="200" cy="100" r="60" fill="%23D4A574" opacity="0.4"/><path d="M0,120 Q100,80 200,110 T400,100" stroke="%23FFFEF9" stroke-width="2" fill="none" opacity="0.3"/></svg>');
+        }
+        
+        .timeline-item:nth-child(2) .timeline-content::before {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect fill="%236B7456" width="400" height="200"/><circle cx="150" cy="80" r="40" fill="%23D4915E" opacity="0.4"/><circle cx="280" cy="120" r="50" fill="%23D4915E" opacity="0.3"/></svg>');
+        }
+        
+        .timeline-item:nth-child(3) .timeline-content::before {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect fill="%23D4915E" width="400" height="200"/><rect x="50" y="50" width="80" height="100" fill="%233A4A35" opacity="0.3"/><rect x="270" y="70" width="70" height="80" fill="%233A4A35" opacity="0.4"/></svg>');
+        }
+        
+        .timeline-item:nth-child(4) .timeline-content::before {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect fill="%233A4A35" width="400" height="200"/><path d="M50,150 L100,100 L150,120 L200,80 L250,100 L300,70 L350,90" stroke="%23D4A574" stroke-width="3" fill="none" opacity="0.4"/></svg>');
+        }
+        
+        .timeline-item:nth-child(5) .timeline-content::before {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><defs><radialGradient id="rg1"><stop offset="0%" style="stop-color:%23D4A574;stop-opacity:0.4"/><stop offset="100%" style="stop-color:%236B7456;stop-opacity:0.2"/></radialGradient></defs><rect fill="url(%23rg1)" width="400" height="200"/><circle cx="200" cy="100" r="80" fill="none" stroke="%23FFFEF9" stroke-width="2" opacity="0.3"/></svg>');
+        }
+        
         .timeline-content:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 50px rgba(58, 74, 53, 0.25);
@@ -260,6 +294,9 @@
             font-weight: 600;
             letter-spacing: 1px;
             margin-bottom: 1rem;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 1;
         }
         
         .timeline-content h3 {
@@ -268,12 +305,16 @@
             color: var(--deep-green);
             margin-bottom: 1rem;
             font-weight: 700;
+            position: relative;
+            z-index: 1;
         }
         
         .timeline-content p {
             color: var(--olive);
             font-size: 1.1rem;
             line-height: 1.8;
+            position: relative;
+            z-index: 1;
         }
         
         /* Timeline Center Dot */
@@ -332,6 +373,37 @@
             border: 1px solid rgba(255, 254, 249, 0.2);
             backdrop-filter: blur(10px);
             transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .legacy-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .legacy-card:nth-child(1)::before {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="35" fill="none" stroke="%23FFFEF9" stroke-width="2"/><circle cx="50" cy="50" r="25" fill="none" stroke="%23FFFEF9" stroke-width="2"/><circle cx="50" cy="50" r="15" fill="none" stroke="%23FFFEF9" stroke-width="2"/><circle cx="50" cy="50" r="5" fill="%23FFFEF9"/></svg>');
+        }
+        
+        .legacy-card:nth-child(2)::before {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,80 L50,20 L80,80 Z" fill="none" stroke="%23FFFEF9" stroke-width="2"/><circle cx="50" cy="50" r="15" fill="none" stroke="%23FFFEF9" stroke-width="2"/><rect x="35" y="60" width="30" height="10" fill="%23FFFEF9" opacity="0.5"/></svg>');
+        }
+        
+        .legacy-card:nth-child(3)::before {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="30" cy="30" r="15" fill="%23FFFEF9" opacity="0.3"/><circle cx="70" cy="30" r="15" fill="%23FFFEF9" opacity="0.3"/><circle cx="30" cy="70" r="15" fill="%23FFFEF9" opacity="0.3"/><circle cx="70" cy="70" r="15" fill="%23FFFEF9" opacity="0.3"/><circle cx="50" cy="50" r="20" fill="%23FFFEF9" opacity="0.5"/></svg>');
+        }
+        
+        .legacy-card:nth-child(4)::before {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23FFFEF9" stroke-width="1"/><line x1="50" y1="10" x2="50" y2="30" stroke="%23FFFEF9" stroke-width="2"/><line x1="50" y1="70" x2="50" y2="90" stroke="%23FFFEF9" stroke-width="2"/><line x1="10" y1="50" x2="30" y2="50" stroke="%23FFFEF9" stroke-width="2"/><line x1="70" y1="50" x2="90" y2="50" stroke="%23FFFEF9" stroke-width="2"/></svg>');
         }
         
         .legacy-card:hover {
@@ -339,16 +411,24 @@
             background: rgba(255, 254, 249, 0.15);
         }
         
+        .legacy-card:hover::before {
+            opacity: 0.15;
+        }
+        
         .legacy-card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.6rem;
             margin-bottom: 1rem;
             color: var(--gold);
+            position: relative;
+            z-index: 1;
         }
         
         .legacy-card p {
             line-height: 1.8;
             opacity: 0.95;
+            position: relative;
+            z-index: 1;
         }
         
         /* Footer */
@@ -408,6 +488,43 @@
             </p>
         </div>
         <div class="scroll-indicator">↓ SCROLL</div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section style="padding: 6rem 2rem; background: var(--warm-white);">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--deep-green); margin-bottom: 1rem;">
+                    The Sacred Setting
+                </h2>
+                <p style="font-size: 1.2rem; color: var(--olive); font-style: italic;">
+                    Where Alpine serenity meets spiritual transformation
+                </p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px var(--shadow); transition: transform 0.3s ease;">
+                    <div style="width: 100%; height: 350px; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 800 600&quot;><defs><linearGradient id=&quot;sky1&quot; x1=&quot;0%&quot; y1=&quot;0%&quot; x2=&quot;0%&quot; y2=&quot;100%&quot;><stop offset=&quot;0%&quot; style=&quot;stop-color:%23D4915E;stop-opacity:0.3&quot;/><stop offset=&quot;100%&quot; style=&quot;stop-color:%236B7456;stop-opacity:0.2&quot;/></linearGradient></defs><rect fill=&quot;url(%23sky1)&quot; width=&quot;800&quot; height=&quot;600&quot;/><path d=&quot;M0,400 L200,250 L400,280 L600,220 L800,300 L800,600 L0,600 Z&quot; fill=&quot;%233A4A35&quot; opacity=&quot;0.6&quot;/><path d=&quot;M0,450 L150,350 L350,380 L550,330 L800,400 L800,600 L0,600 Z&quot; fill=&quot;%236B7456&quot; opacity=&quot;0.5&quot;/><circle cx=&quot;650&quot; cy=&quot;150&quot; r=&quot;80&quot; fill=&quot;%23D4A574&quot; opacity=&quot;0.4&quot;/><circle cx=&quot;400&quot; cy=&quot;350&quot; r=&quot;30&quot; fill=&quot;%23C75B3F&quot; opacity=&quot;0.3&quot;/></svg>') center/cover;"></div>
+                    <div style="padding: 1.5rem; background: var(--cream);">
+                        <h3 style="font-family: 'Playfair Display', serif; color: var(--deep-green); margin-bottom: 0.5rem;">Alpine Sanctuary</h3>
+                        <p style="color: var(--olive); line-height: 1.6;">The majestic Swiss Alps provided the perfect backdrop for spiritual practice and contemplation.</p>
+                    </div>
+                </div>
+                <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px var(--shadow); transition: transform 0.3s ease;">
+                    <div style="width: 100%; height: 350px; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 800 600&quot;><rect fill=&quot;%236B7456&quot; width=&quot;800&quot; height=&quot;600&quot;/><circle cx=&quot;400&quot; cy=&quot;280&quot; r=&quot;120&quot; fill=&quot;%23D4A574&quot; opacity=&quot;0.4&quot;/><circle cx=&quot;400&quot; cy=&quot;280&quot; r=&quot;80&quot; fill=&quot;%23D4915E&quot; opacity=&quot;0.5&quot;/><circle cx=&quot;400&quot; cy=&quot;280&quot; r=&quot;40&quot; fill=&quot;%23C75B3F&quot; opacity=&quot;0.6&quot;/><path d=&quot;M200,450 Q400,400 600,450&quot; stroke=&quot;%23FFFEF9&quot; stroke-width=&quot;3&quot; fill=&quot;none&quot; opacity=&quot;0.3&quot;/></svg>') center/cover;"></div>
+                    <div style="padding: 1.5rem; background: var(--cream);">
+                        <h3 style="font-family: 'Playfair Display', serif; color: var(--deep-green); margin-bottom: 0.5rem;">Practice & Study</h3>
+                        <p style="color: var(--olive); line-height: 1.6;">Students from around the world gathered to learn transcendental meditation techniques.</p>
+                    </div>
+                </div>
+                <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px var(--shadow); transition: transform 0.3s ease;">
+                    <div style="width: 100%; height: 350px; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 800 600&quot;><rect fill=&quot;%23D4915E&quot; width=&quot;800&quot; height=&quot;600&quot; opacity=&quot;0.3&quot;/><ellipse cx=&quot;400&quot; cy=&quot;450&quot; rx=&quot;350&quot; ry=&quot;100&quot; fill=&quot;%233A4A35&quot; opacity=&quot;0.4&quot;/><rect x=&quot;100&quot; y=&quot;200&quot; width=&quot;150&quot; height=&quot;250&quot; fill=&quot;%236B7456&quot; opacity=&quot;0.5&quot;/><rect x=&quot;300&quot; y=&quot;180&quot; width=&quot;120&quot; height=&quot;270&quot; fill=&quot;%236B7456&quot; opacity=&quot;0.6&quot;/><rect x=&quot;480&quot; y=&quot;220&quot; width=&quot;140&quot; height=&quot;230&quot; fill=&quot;%236B7456&quot; opacity=&quot;0.5&quot;/></svg>') center/cover;"></div>
+                    <div style="padding: 1.5rem; background: var(--cream);">
+                        <h3 style="font-family: 'Playfair Display', serif; color: var(--deep-green); margin-bottom: 0.5rem;">Lake Lucerne Views</h3>
+                        <p style="color: var(--olive); line-height: 1.6;">The tranquil waters and mountain vistas created an atmosphere conducive to inner peace.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Timeline Section -->

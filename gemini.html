@@ -7,10 +7,13 @@
     <style>
         /* --- CSS Reset & Typography --- */
         :root {
-            --primary-blue: #0f3057; /* Deep Swiss Lake Blue */
-            --secondary-gold: #c7a35d; /* Aged Gold */
-            --light-cream: #f4f1ea; /* Parchment/Paper */
-            --text-dark: #2c2c2c;
+            /* Deep Swiss Blue */
+            --primary-blue: #0e2a47;
+            /* Antique Gold */
+            --secondary-gold: #cfaa5f;
+            /* Paper/Cream */
+            --light-cream: #f7f5f0;
+            --text-dark: #222;
         }
         body, html {
             margin: 0;
@@ -27,10 +30,12 @@
         a {
             text-decoration: none;
             color: var(--primary-blue);
+            font-weight: bold;
             transition: color 0.3s ease;
         }
         a:hover {
             color: var(--secondary-gold);
+            text-decoration: underline;
         }
         .container {
             width: 90%;
@@ -38,12 +43,12 @@
             margin: 0 auto;
         }
 
-        /* --- Header & Nav --- */
+        /* --- Header --- */
         header {
             background-color: #fff;
             border-bottom: 4px solid var(--secondary-gold);
             padding: 1.2rem 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -58,7 +63,6 @@
             font-weight: bold;
             font-family: 'Georgia', serif;
             color: var(--primary-blue);
-            letter-spacing: 0.5px;
         }
         nav ul {
             list-style: none;
@@ -72,39 +76,42 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: var(--text-dark);
+        }
+        nav ul li a:hover {
+            color: var(--secondary-gold);
+            text-decoration: none;
         }
 
         /* --- Hero Section --- */
         .hero {
             position: relative;
-            /* Historic Photo: Hotel Sonnenberg c. 1900s (Public Domain) */
-            background-image: linear-gradient(rgba(15, 48, 87, 0.6), rgba(15, 48, 87, 0.6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Seelisberg_and_Hotel_Sonnenberg%2C_Lake_Lucerne%2C_Switzerland-LCCN2001703101.jpg/1280px-Seelisberg_and_Hotel_Sonnenberg%2C_Lake_Lucerne%2C_Switzerland-LCCN2001703101.jpg');
+            /* DYNAMIC MOCKUP IMAGE: Uses 'loremflickr' with keywords 'switzerland,lake' to guarantee a working image */
+            background-image: linear-gradient(rgba(14, 42, 71, 0.6), rgba(14, 42, 71, 0.6)), url('https://loremflickr.com/1600/900/switzerland,lake/all');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: #fff;
             text-align: center;
-            padding: 200px 20px;
-            overflow: hidden;
+            padding: 220px 20px;
         }
         .hero h1 {
             color: #fff;
             font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.7);
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.6);
             font-weight: normal;
-            letter-spacing: 1px;
         }
         .hero p {
             font-size: 1.5rem;
             max-width: 800px;
             margin: 0 auto;
             font-weight: 300;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-            background-color: rgba(15, 48, 87, 0.4);
-            padding: 20px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            background: rgba(14, 42, 71, 0.6);
+            padding: 15px 30px;
             border-radius: 4px;
-            backdrop-filter: blur(2px);
+            display: inline-block;
         }
 
         /* --- Content Sections --- */
@@ -121,10 +128,10 @@
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 70px;
             height: 4px;
             background-color: var(--secondary-gold);
-            margin: 25px auto 0;
+            margin: 20px auto 0;
         }
 
         /* --- Split Layout --- */
@@ -135,7 +142,6 @@
         }
         .split-text {
             flex: 1;
-            padding-top: 10px;
         }
         .split-text p {
             margin-bottom: 1.5em;
@@ -150,39 +156,41 @@
             width: 100%;
             height: auto;
             border-radius: 3px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            border: 10px solid #fff;
-            outline: 1px solid #ddd;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border: 8px solid #fff;
+            display: block;
         }
-        /* Caption style */
-        .img-caption {
+        .caption {
+            display: block;
+            text-align: center;
             font-size: 0.85rem;
             color: #666;
-            margin-top: 10px;
-            text-align: center;
+            margin-top: 15px;
             font-style: italic;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
         }
 
         /* --- Timeline --- */
         .timeline-section {
             background-color: #fff;
-            border-top: 1px solid #e0e0e0;
-            border-bottom: 1px solid #e0e0e0;
+            border-top: 1px solid #eaeaea;
+            border-bottom: 1px solid #eaeaea;
         }
         .timeline-item {
             display: flex;
             margin-bottom: 50px;
             position: relative;
         }
-        /* Vertical Line */
         .timeline-item::before {
             content: '';
             position: absolute;
             left: 145px;
-            top: 8px;
-            bottom: -58px;
-            width: 1px;
+            top: 10px;
+            bottom: -50px;
+            width: 2px;
             background-color: var(--secondary-gold);
+            opacity: 0.3;
         }
         .timeline-item:last-child::before {
             display: none;
@@ -191,35 +199,21 @@
             flex: 0 0 130px;
             font-weight: bold;
             color: var(--secondary-gold);
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-family: 'Georgia', serif;
             padding-right: 30px;
             text-align: right;
-            position: relative;
-        }
-        /* Dot */
-        .timeline-date::after {
-            content: '';
-            position: absolute;
-            right: -10px;
-            top: 6px;
-            width: 10px;
-            height: 10px;
-            background-color: #fff;
-            border: 3px solid var(--secondary-gold);
-            border-radius: 50%;
-            z-index: 2;
         }
         .timeline-content {
             flex: 1;
             background: var(--light-cream);
-            padding: 30px;
+            padding: 25px;
             border-radius: 4px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--secondary-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
         .timeline-content h3 {
             margin-top: 0;
-            font-size: 1.3rem;
             margin-bottom: 10px;
         }
 
@@ -240,7 +234,7 @@
             font-size: 0.9rem;
         }
 
-        /* --- Mobile --- */
+        /* Mobile */
         @media (max-width: 768px) {
             .nav-container { flex-direction: column; }
             nav ul { flex-wrap: wrap; justify-content: center; margin-top: 15px; }
@@ -248,9 +242,8 @@
             .split-layout { flex-direction: column; }
             .split-layout.reverse { flex-direction: column-reverse; }
             .timeline-item { flex-direction: column; }
-            .timeline-item::before { left: 15px; top: 35px; bottom: -20px; }
-            .timeline-date { text-align: left; padding-left: 35px; margin-bottom: 15px; }
-            .timeline-date::after { left: 8px; right: auto; }
+            .timeline-item::before { left: 15px; top: 40px; bottom: -20px; }
+            .timeline-date { text-align: left; padding-left: 35px; margin-bottom: 10px; }
         }
     </style>
 </head>
@@ -272,7 +265,7 @@
     <section class="hero">
         <div class="container">
             <h1>The Capital of the Age of Enlightenment</h1>
-            <p>Seelisberg, Switzerland (1972–1992)</p>
+            <p>Maharishi Mahesh Yogi's Global Headquarters (1972–1992)</p>
         </div>
     </section>
 
@@ -281,16 +274,16 @@
             <div class="split-layout">
                 <div class="split-text">
                     <h2>A Global Headquarters</h2>
-                    <p>In the early 1970s, the Transcendental Meditation movement acquired the majestic Grand Hotel Sonnenberg, located high above Lake Lucerne (Vierwaldstättersee). The location was not accidental; perched directly above the Rütli Meadow—the historic birthplace of Switzerland—it offered symbolic weight to Maharishi Mahesh Yogi's mission.</p>
-                    <p>From this alpine sanctuary, Maharishi inaugurated the "Dawn of the Age of Enlightenment" in 1975. The hotel became a bustling hub where scientists, educators, and thousands of course participants gathered to explore consciousness.</p>
+                    <p>In the early 1970s, the Transcendental Meditation movement acquired the majestic Grand Hotel Sonnenberg. Perched high above Lake Lucerne on the Seelisberg peninsula, it sits directly above the Rütli Meadow—the historic birthplace of Switzerland.</p>
+                    <p>From this alpine sanctuary, Maharishi inaugurated the "Dawn of the Age of Enlightenment" in 1975. The hotel became a bustling hub where scientists, educators, and thousands of course participants gathered to explore consciousness, far removed from the noise of the world.</p>
                 </div>
                 <div class="split-image">
-                    <img 
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Maharishi_Mahesh_Yogi_during_a_1979_visit_to_MUM.jpg/600px-Maharishi_Mahesh_Yogi_during_a_1979_visit_to_MUM.jpg" 
-                        alt="Maharishi Mahesh Yogi, 1979"
-                        onerror="this.onerror=null;this.src='https://placehold.co/600x800/0f3057/cfb06d?text=Maharishi+Photo+Unavailable';"
-                    >
-                    <div class="img-caption">Maharishi Mahesh Yogi, circa 1979</div>
+                    <img src="https://placehold.co/600x800/0f3057/cfaa5f?text=Maharishi+Mahesh+Yogi%0A(Historical+Portrait+Placeholder)" alt="Maharishi Mahesh Yogi Placeholder">
+                    <span class="caption">
+                        <strong>Note:</strong> Direct embedding of historical photos is restricted by external servers. 
+                        <br>
+                        <a href="https://commons.wikimedia.org/wiki/File:Maharishi_Mahesh_Yogi_roughly_1979.jpg" target="_blank">Click here to view the authentic 1979 Portrait on Wikimedia</a>
+                    </span>
                 </div>
             </div>
         </div>
@@ -330,12 +323,8 @@
         <div class="container">
             <div class="split-layout reverse">
                 <div class="split-image">
-                    <img 
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Vierwaldstaettersee_und_Urnersee_von_Seelisberg_aus_gesehen.JPG/800px-Vierwaldstaettersee_und_Urnersee_von_Seelisberg_aus_gesehen.JPG" 
-                        alt="View of Lake Lucerne from Seelisberg"
-                        onerror="this.onerror=null;this.src='https://placehold.co/800x600/0f3057/cfb06d?text=View+of+Lake+Lucerne';"
-                    >
-                    <div class="img-caption">The view from Seelisberg looking over Lake Lucerne.</div>
+                    <img src="https://loremflickr.com/800/600/alps,meadow/all" alt="Swiss Alpine Meadow">
+                    <span class="caption">The pristine environment of the Swiss Alps surrounding Seelisberg.</span>
                 </div>
                 <div class="split-text">
                     <h2>Legacy of the Mountain</h2>

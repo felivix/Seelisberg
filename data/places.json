@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Hotel Sonnenberg (historic complex)",
+    "slug": "sonnenberg",
+    "type": "Campus / retreat infrastructure",
+    "image": "seelisberg_historic_sonnenberg.jpg",
+    "alt": "Historic view of Seelisberg and Hotel Sonnenberg (circa 1890\u20131900).",
+    "summary": "Often referenced as a key Seelisberg site used by the TM movement for courses, residences, and community activity.",
+    "notes": [
+      "Public sources: ownership since 1972 (SRF).",
+      "Historic image is public domain (Library of Congress / Photochrom)."
+    ],
+    "links": [
+      {
+        "label": "SRF feature (2023)",
+        "url": "https://www.srf.ch/news/schweiz/legendaeres-hotel-wohnen-wo-die-yogis-fliegen-lernten"
+      },
+      {
+        "label": "Historic image on Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/File:Seelisberg_and_Hotel_Sonnenberg,_Lake_Lucerne,_Switzerland-LCCN2001703101.jpg"
+      }
+    ]
+  },
+  {
+    "name": "MERU / TM Center Seelisberg",
+    "slug": "meru",
+    "type": "Teaching & community centre",
+    "image": "treib_seelisberg_station.jpg",
+    "alt": "Treib\u2013Seelisberg railway station building with Swiss flag.",
+    "summary": "Local contact point for learning Transcendental Meditation\u00ae and participating in follow-up and community activities.",
+    "notes": [
+      "Replace this placeholder photo with an actual image of the centre if you have one."
+    ],
+    "links": [
+      {
+        "label": "MERU Seelisberg (meru.ch)",
+        "url": "https://meru.ch/"
+      },
+      {
+        "label": "TM Switzerland \u2013 Seelisberg",
+        "url": "https://switzerland.tm.org/seelisberg"
+      }
+    ]
+  },
+  {
+    "name": "View over Lake Lucerne from Seelisberg",
+    "slug": "view",
+    "type": "Landscape / setting",
+    "image": "hero_seelisberg_lake_lucerne.jpg",
+    "alt": "Panoramic view over Lake Lucerne from Seelisberg.",
+    "summary": "The landscape setting that shaped the Seelisberg chapter\u2014quiet, expansive, and close to key Swiss cultural landmarks.",
+    "notes": [
+      "CC BY-SA image by WiseTea (Wikimedia Commons)."
+    ],
+    "links": [
+      {
+        "label": "Image source (Wikimedia)",
+        "url": "https://commons.wikimedia.org/wiki/File:Panoramic_view_Lake_Lucerne_from_Seelisberg_2.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Seeli (Seelisbergsee)",
+    "slug": "seeli",
+    "type": "Nature / walking routes",
+    "image": "seeli_aerial.jpg",
+    "alt": "Aerial view of the Seeli lake in Seelisberg.",
+    "summary": "A small alpine lake above the village\u2014often part of walks and retreats.",
+    "notes": [
+      "CC BY-SA image by Daniel Reust (Wikimedia Commons)."
+    ],
+    "links": [
+      {
+        "label": "Image source (Wikimedia)",
+        "url": "https://commons.wikimedia.org/wiki/File:Seelisberg_Seeli.jpg"
+      }
+    ]
+  },
+  {
+    "name": "R\u00fctli meadow",
+    "slug": "ruetli",
+    "type": "Nearby landmark",
+    "image": "ruetli_meadow.jpg",
+    "alt": "R\u00fctli meadow above Lake Lucerne.",
+    "summary": "A symbolic Swiss landmark located within the municipality\u2019s territory\u2014part of what makes Seelisberg culturally unique.",
+    "notes": [
+      "CC BY-SA image by Parpan05 (Wikimedia Commons)."
+    ],
+    "links": [
+      {
+        "label": "Seelisberg (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Seelisberg"
+      },
+      {
+        "label": "Image source (Wikimedia)",
+        "url": "https://commons.wikimedia.org/wiki/File:R%C3%BCtli_Wiese.jpg"
+      }
+    ]
+  }
+]

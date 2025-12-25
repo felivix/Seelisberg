@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seelisberg Movement History</title>
+  <meta name="description" content="An editable website template documenting Maharishi’s Movement in Seelisberg: timeline, places, and archive.">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="Seelisberg Movement History">
+  <meta property="og:description" content="An editable website template documenting Maharishi’s Movement in Seelisberg: timeline, places, and archive.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/hero_seelisberg_lake_lucerne.jpg">
+  <link rel="icon" href="./assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="./index.html" aria-label="Home">
+        <img src="./assets/logo.svg" alt="Seelisberg Movement History" />
+      </a>
+      <button class="navbtn" id="navbtn" aria-expanded="false" aria-controls="navlinks">
+        <span aria-hidden="true">☰</span> Menu
+      </button>
+      <nav class="navlinks" id="navlinks">
+        <a href="./index.html">Home</a>
+        <a href="./timeline.html">Timeline</a>
+        <a href="./places.html">Places</a>
+        <a href="./archive.html">Archive</a>
+        <a href="./visit.html">Visit</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+<main class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <section class="card hero-media" aria-label="Hero">
+        <img src="./assets/hero_seelisberg_lake_lucerne.jpg" alt="Panoramic view over Lake Lucerne from Seelisberg" loading="eager" decoding="async">
+        <div class="hero-copy">
+          <div class="badge"><span class="badge-dot"></span>Seelisberg · Switzerland</div>
+          <h1>The Seelisberg chapter of Maharishi’s Movement</h1>
+          <div class="lede">A modern, editable website template to document the Movement’s history in Seelisberg—places, people, milestones, and sources.</div>
+          <div class="actions">
+            <a class="btn primary" href="./timeline.html">Explore the timeline</a>
+            <a class="btn" href="./places.html">Key places</a>
+            <a class="btn" href="./archive.html">Browse archive</a>
+          </div>
+          <div class="kicker">Tip: edit <code>data/events.json</code> and <code>data/places.json</code> to update content.</div>
+        </div>
+      </section>
+
+      <aside class="card meta">
+        <h2>At a glance</h2>
+        <p>Fast orientation—then go deeper into the timeline and places.</p>
+        <div class="grid">
+          <div class="mini">
+            <div class="label">Span covered</div>
+            <div class="value" id="spanYears">—</div>
+          </div>
+          <div class="mini">
+            <div class="label">Timeline entries</div>
+            <div class="value" id="spanEvents">—</div>
+          </div>
+          <div class="mini">
+            <div class="label">Place pages</div>
+            <div class="value">5</div>
+          </div>
+          <div class="mini">
+            <div class="label">Draft status</div>
+            <div class="value">Ready to fill</div>
+          </div>
+        </div>
+        <hr class="sep">
+        <div class="small">
+          Want this to be “official”? Replace the draft notice, add your governance/permissions, and confirm trademark usage with your Movement’s legal guidelines.
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<section class="section">
+  <div class="container">
+    <h2>What this site does well</h2>
+    <p>Story first, then detail. The structure is designed for credibility: claims are tied to sources, and photos include licensing/attribution.</p>
+    <div class="grid3">
+      <div class="tile">
+        <h3>Trustworthy history</h3>
+        <p>Timeline entries encourage source links (public references + your internal archive).</p>
+      </div>
+      <div class="tile">
+        <h3>Places people remember</h3>
+        <p>Dedicated “Places” section helps visitors connect events to geography and atmosphere.</p>
+      </div>
+      <div class="tile">
+        <h3>Archive-ready</h3>
+        <p>Simple JSON-driven content makes it easy to expand without rebuilding the layout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Timeline preview</h2>
+    <p>Five anchor moments. Edit them freely (and add your deeper internal chronology).</p>
+    <div class="timeline" id="timelinePreview" aria-live="polite"></div>
+    <div style="margin-top:12px;">
+      <a class="btn primary" href="./timeline.html">Open full timeline</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Start with “places” to make it vivid</h2>
+    <p>Add photos of people and activities only when you have clear permission. Until then, landscapes and sites keep it respectful and safe.</p>
+    <div class="place-grid" style="margin-top:10px;">
+      <article class="card place">
+        <div class="cover"><img src="./assets/seelisberg_historic_sonnenberg.jpg" alt="Historic view of Seelisberg and Hotel Sonnenberg" loading="lazy" decoding="async" data-lightbox></div>
+        <div class="body">
+          <div class="type">Historic photo</div>
+          <h3>Sonnenberg (archive image)</h3>
+          <p class="small">A public-domain photochrom print offers a sense of the site’s scale and era—perfect for an “archive” angle.</p>
+          <div class="links"><a href="./places.html">See all places</a></div>
+        </div>
+      </article>
+      <article class="card place">
+        <div class="cover"><img src="./assets/seeli_aerial.jpg" alt="Aerial view of the Seeli lake" loading="lazy" decoding="async" data-lightbox></div>
+        <div class="body">
+          <div class="type">Landscape</div>
+          <h3>Seeli (Seelisbergsee)</h3>
+          <p class="small">Use the natural surroundings to set tone: quiet, clean, and distinctly Swiss—without relying on private images.</p>
+          <div class="links"><a href="./places.html#seeli">See Seeli</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="notice">
+      <strong>Draft website:</strong> Replace placeholders with your verified Seelisberg records, photos, and permissions.
+      “Transcendental Meditation” is a registered trademark. This site is a historical presentation template and is not an official TM website unless you choose to make it so.
+    </div>
+    <div class="credits">
+      <div><strong>Image credits (licensed):</strong></div>
+      <div>Hero view over Lake Lucerne from Seelisberg — WiseTea, CC BY-SA 4.0 (Wikimedia Commons)</div>
+      <div>Treib–Seelisberg station — WiseTea, CC BY-SA 4.0 (Wikimedia Commons)</div>
+      <div>Seeli aerial — Daniel Reust, CC BY-SA 4.0 (Wikimedia Commons)</div>
+      <div>Rütli meadow — Parpan05, CC BY-SA 4.0 (Wikimedia Commons)</div>
+      <div>Historic Seelisberg & Hotel Sonnenberg (c. 1890–1900) — Photochrom Print Collection, Public Domain (Library of Congress via Wikimedia Commons)</div>
+    </div>
+    <hr class="sep">
+    <div class="small">Built as static HTML/CSS/JS. Edit the content in <code>/data</code> and replace photos in <code>/assets</code>.</div>
+  </div>
+</footer>
+
+<script src="./assets/app.js"></script>
+</body>
+</html>

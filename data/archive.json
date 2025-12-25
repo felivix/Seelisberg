@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Oral histories (template)",
+    "type": "Audio / transcript",
+    "year": "\u2014",
+    "summary": "Add interviews with long-time residents, teachers, course participants, and staff. Include consent and usage rights.",
+    "status": "Placeholder",
+    "cta": {
+      "label": "Add item",
+      "href": "#"
+    }
+  },
+  {
+    "title": "Course programs & announcements",
+    "type": "PDF / scan",
+    "year": "\u2014",
+    "summary": "Upload selected flyers, schedules, brochures, and official announcements (with permission).",
+    "status": "Placeholder",
+    "cta": {
+      "label": "Add item",
+      "href": "#"
+    }
+  },
+  {
+    "title": "Photo archive",
+    "type": "Images",
+    "year": "\u2014",
+    "summary": "Curate a selection of licensed photos. Include photographer credits and license links.",
+    "status": "Ready",
+    "cta": {
+      "label": "See places",
+      "href": "places.html"
+    }
+  }
+]

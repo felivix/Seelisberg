@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Maharishi's Movement in Seelisberg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a; /* Dark slate */
+            --surface: #1e293b;
+            --text: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent: #60a5fa; /* Blue accent */
+            --accent-light: #93c5fd;
+            --gradient: linear-gradient(135deg, #1e3a8a, #60a5fa);
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        header {
+            position: relative;
+            height: 100vh;
+            background: var(--gradient), url('https://media.gettyimages.com/id/2230172139/photo/scenic-view-of-lake-lucerne-from-niederbauen-mountain-niederbauen-kulm-switzerland.jpg?s=1024x1024') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 100px;
+        }
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15,23,42,0.9), transparent 40%);
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin: 0 20px 20px;
+            max-width: 90%;
+            z-index: 2;
+        }
+        header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 20px 40px;
+            opacity: 0.9;
+            z-index: 2;
+        }
+        .portrait {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid rgba(255,255,255,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            z-index: 2;
+            margin-top: -100px;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            background: rgba(15,23,42,0.7);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: background 0.4s;
+        }
+        nav.scrolled {
+            background: rgba(15,23,42,0.95);
+            padding: 15px 40px;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        section {
+            padding: 120px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--accent-light);
+        }
+        .intro p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 80px 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 80px auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--gradient);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        .timeline-content {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        .timeline-content h3 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 1.6rem;
+        }
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            top: 50px;
+            box-shadow: 0 0 0 8px var(--bg);
+        }
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -62px;
+        }
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -62px;
+        }
+        blockquote {
+            font-size: 2rem;
+            font-weight: 300;
+            text-align: center;
+            max-width: 900px;
+            margin: 100px auto;
+            padding: 60px;
+            background: var(--gradient);
+            border-radius: 30px;
+            color: white;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        .location-img {
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            margin: 60px auto;
+            display: block;
+        }
+        .map {
+            width: 100%;
+            height: 600px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            border: none;
+            margin: 60px 0;
+        }
+        footer {
+            background: #0a0f1a;
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 992px) {
+            .timeline::before { left: 40px; }
+            .timeline-item { width: 100%; left: 0 !important; padding-left: 100px; }
+            .timeline-item .timeline-dot { left: -22px; }
+            .timeline-item:nth-child(odd) { padding-left: 100px; }
+        }
+        @media (max-width: 768px) {
+            nav { flex-wrap: wrap; gap: 20px; padding: 15px; }
+            header { height: 90vh; }
+            h1 { font-size: 2.8rem; }
+            blockquote { font-size: 1.6rem; padding: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#introduction">Introduction</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#legacy">Legacy</a>
+        <a href="#location">Location</a>
+    </nav>
+
+    <header id="home">
+        <div class="overlay"></div>
+        <h1>The History of Maharishi Mahesh Yogi's<br>Transcendental Meditation Movement<br>in Seelisberg, Switzerland</h1>
+        <p>The Age of Enlightenment in the Heart of the Swiss Alps (1970–2026)</p>
+        <img class="portrait" src="https://maharishimaheshyogi.in/wp-content/uploads/2020/02/blog-1.jpg" alt="Maharishi Mahesh Yogi">
+    </header>
+
+    <section id="introduction" class="intro">
+        <h2>Introduction</h2>
+        <p>Maharishi Mahesh Yogi, founder of the Transcendental Meditation (TM) movement, established Seelisberg as a global hub in the early 1970s. Located high above Lake Lucerne in Canton Uri, this picturesque Swiss village became the international headquarters for TM from approximately 1971–1983.</p>
+        <p>Maharishi chose the former Hotel Sonnenberg as the center, transforming it into the Maharishi European Research University (MERU) and later adding the Maharishi Ayurveda Health Centre.</p>
+
+        <div class="gallery">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Seelisberg_and_Hotel_Sonnenberg%2C_Lake_Lucerne%2C_Switzerland-LCCN2001703101.jpg" alt="Historical view of Hotel Sonnenberg">
+            <img src="https://afar.brightspotcdn.com/dims4/default/1660df3/2147483647/strip/false/crop/800x450+0+25/resize/1200x675!/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2Ff8%2Fa8%2F33ccc68a6b7f2087ffd6bfad18cf%2Foriginal-127be8f1f60252154f5ab1dcf0358616.jpg" alt="MERU building">
+            <img src="https://www.ayurveda-seelisberg.ch/uploads/images/home-mobile-pilgerheim3-en.jpg" alt="Maharishi Ayurveda Health Centre">
+            <img src="https://c8.alamy.com/comp/2RT9XP1/seelisberg-and-hotel-sonnenberg-lake-lucerne-switzerland-1890-2RT9XP1.jpg" alt="Early Hotel Sonnenberg">
+        </div>
+    </section>
+
+    <section id="timeline">
+        <h2>Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <h3>Early 1970s</h3>
+                    <p>Maharishi acquires Hotel Sonnenberg; Seelisberg becomes the world headquarters for the TM movement.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <h3>1975</h3>
+                    <p>Founding of MERU for scientific research on TM and higher states of consciousness. Inauguration of the "Dawn of the Age of Enlightenment."</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <h3>1976–1983</h3>
+                    <p>Peak years; Maharishi resides and teaches in Seelisberg. Introduction of advanced programs like TM-Sidhi (including Yogic Flying).</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <h3>Early 1980s</h3>
+                    <p>Launch of Maharishi Ayurveda in Seelisberg – the birthplace of this revived system outside India.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <h3>1990</h3>
+                    <p>Global headquarters moves to Vlodrop, Netherlands.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-dot"></div>
+                    <h3>2025</h3>
+                    <p>The property is sold, marking the end of an era, though TM-related activities continue in the region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="legacy">
+        <h2>Key Events and Legacy</h2>
+        <p class="intro">Seelisberg was the epicenter of TM's "golden age." Thousands attended courses, teacher training, and personal lectures by Maharishi. It hosted international conferences blending ancient Vedic knowledge with modern science.</p>
+        <p class="intro">The serene Alpine location inspired major developments in the movement, including global programs aimed at creating world peace through collective meditation.</p>
+
+        <blockquote>"Seelisberg is a place of peace and the most creative place in Central Europe." – Maharishi Mahesh Yogi</blockquote>
+
+        <p class="intro">Today, while the main facilities have transitioned (with the Ayurveda Health Centre closing in 2025), the site remains a place of profound historical significance for TM practitioners worldwide.</p>
+    </section>
+
+    <section id="location">
+        <h2>The Location</h2>
+        <p class="intro">Seelisberg offers breathtaking views over Lake Lucerne and the surrounding Alps – a setting that perfectly complemented the pursuit of inner peace.</p>
+        <img class="location-img" src="https://c8.alamy.com/comp/2F60JN2/aerial-view-of-the-lake-lucerne-and-the-seelisberg-area-near-the-famous-ruetli-meadow-in-central-switzerland-on-a-sunny-summer-day-2F60JN2.jpg" alt="Aerial view of Lake Lucerne from Seelisberg">
+
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5408.796258884571!2d8.579699!3d46.975399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ff8e3f0b7b5b5%3A0x8f0a9b3e0c5e5f0a!2sSeelisberg%2C%20Switzerland!5e0!3m2!1sen!2sus!4v1735700000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 History of Maharishi's Movement in Seelisberg | Informational site created for educational purposes</p>
+        <p>All images sourced from public web results and used under fair use for non-commercial historical documentation.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 100);
+        });
+    </script>
+</body>
+</html>

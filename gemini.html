@@ -7,10 +7,13 @@
     <style>
         /* --- CSS Reset & Typography --- */
         :root {
+            /* Deep Swiss blue */
             --primary-blue: #0f3057;
-            --secondary-gold: #cfb06d;
-            --light-cream: #f8f5e6;
-            --text-dark: #333;
+            /* Aged gold/brass */
+            --secondary-gold: #c7a35d;
+            /* Off-white/aged paper */
+            --light-cream: #f9f7f1;
+            --text-dark: #2c2c2c;
         }
         body, html {
             margin: 0;
@@ -21,7 +24,7 @@
             background-color: var(--light-cream);
         }
         h1, h2, h3 {
-            font-family: 'Georgia', serif;
+            font-family: 'Georgia', 'Times New Roman', serif;
             color: var(--primary-blue);
         }
         a {
@@ -34,16 +37,16 @@
         }
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         /* --- Header & Nav --- */
         header {
             background-color: #fff;
-            border-bottom: 3px solid var(--secondary-gold);
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--secondary-gold);
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         .nav-container {
             display: flex;
@@ -51,105 +54,160 @@
             align-items: center;
         }
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
             font-family: 'Georgia', serif;
+            color: var(--primary-blue);
         }
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
             margin: 0;
+            padding: 0;
         }
         nav ul li a {
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         /* --- Hero Section --- */
         .hero {
-            /* PLACEHOLDER IMAGE: Replace with a wide shot of Hotel Sonnenberg/Seelisberg */
-            background-image: linear-gradient(rgba(15, 48, 87, 0.7), rgba(15, 48, 87, 0.7)), url('https://via.placeholder.com/1600x800/0f3057/ffffff?text=Vintage+Photo+of+Seelisberg+Headquarters');
+            /* Image source: Wikimedia Commons - View from Seelisberg over Lake Lucerne */
+            background-image: linear-gradient(rgba(15, 48, 87, 0.6), rgba(15, 48, 87, 0.6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Vierwaldstaettersee_und_Urnersee_von_Seelisberg_aus_gesehen.JPG/1280px-Vierwaldstaettersee_und_Urnersee_von_Seelisberg_aus_gesehen.JPG');
             background-size: cover;
-            background-position: center;
+            background-position: center bottom;
+            background-attachment: fixed; /* Parallax effect */
             color: #fff;
             text-align: center;
-            padding: 150px 20px;
+            padding: 180px 20px;
         }
         .hero h1 {
             color: #fff;
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+            font-weight: normal;
         }
         .hero p {
-            font-size: 1.5rem;
-            max-width: 700px;
+            font-size: 1.4rem;
+            max-width: 750px;
             margin: 0 auto;
             font-weight: 300;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         /* --- Content Sections General --- */
         section {
-            padding: 80px 0;
+            padding: 90px 0;
         }
         .section-title {
             text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             position: relative;
+            font-weight: normal;
         }
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 80px;
             height: 3px;
             background-color: var(--secondary-gold);
-            margin: 20px auto 0;
+            margin: 25px auto 0;
         }
 
         /* --- Split Layout Section --- */
         .split-layout {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 60px;
         }
         .split-text {
             flex: 1;
+        }
+        .split-text p {
+            margin-bottom: 1.5em;
+            font-size: 1.05rem;
         }
         .split-image {
             flex: 1;
         }
         .split-image img {
             width: 100%;
-            border-radius: 4px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border: 5px solid #fff;
+            height: auto;
+            border-radius: 2px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            /* A classic photo border effect */
+            border: 8px solid #fff;
+            outline: 1px solid #eee; 
         }
 
         /* --- Timeline Section --- */
         .timeline-section {
             background-color: #fff;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
         }
         .timeline-item {
             display: flex;
-            margin-bottom: 40px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 30px;
+            margin-bottom: 50px;
+            position: relative;
         }
+        /* Vertical line connector */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 165px;
+            top: 5px;
+            bottom: -55px;
+            width: 2px;
+            background-color: var(--secondary-gold);
+            opacity: 0.3;
+        }
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
         .timeline-date {
             flex: 0 0 150px;
             font-weight: bold;
             color: var(--secondary-gold);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-family: 'Georgia', serif;
-            padding-right: 20px;
+            padding-right: 30px;
             text-align: right;
+            position: relative;
+        }
+        /* Timeline dot */
+        .timeline-date::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--secondary-gold);
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px var(--secondary-gold);
+        }
+        .timeline-content {
+            flex: 1;
+            background: var(--light-cream);
+            padding: 25px;
+            border-radius: 4px;
+            border-left: 4px solid var(--secondary-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         .timeline-content h3 {
             margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .timeline-content p {
+            margin-bottom: 0;
         }
 
         /* --- Footer --- */
@@ -157,16 +215,25 @@
             background-color: var(--primary-blue);
             color: #fff;
             text-align: center;
-            padding: 40px 0;
+            padding: 60px 0;
+        }
+        footer .logo {
+            color: var(--secondary-gold);
+            margin-bottom: 1rem;
+            display: inline-block;
         }
         footer p {
             opacity: 0.8;
             font-size: 0.9rem;
+            max-width: 600px;
+            margin: 10px auto;
         }
         footer .disclaimer {
-            font-size: 0.8rem;
-            margin-top: 20px;
-            opacity: 0.6;
+            font-size: 0.75rem;
+            margin-top: 30px;
+            opacity: 0.5;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
         }
 
         /* Mobile Responsiveness */
@@ -178,19 +245,36 @@
                 margin-top: 20px;
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 15px;
             }
             .hero h1 {
                 font-size: 2.5rem;
             }
+            .hero p {
+                font-size: 1.1rem;
+            }
             .split-layout {
                 flex-direction: column;
             }
+            .split-layout.reverse {
+                flex-direction: column-reverse;
+            }
+            
             .timeline-item {
                 flex-direction: column;
             }
+            .timeline-item::before {
+                left: 16px;
+                top: 40px;
+                bottom: -20px;
+            }
             .timeline-date {
                 text-align: left;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
+                padding-left: 40px;
+            }
+            .timeline-date::after {
+                left: 10px;
             }
         }
     </style>
@@ -204,7 +288,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#history">The Sonnenberg</a></li>
-                    <li><a href="#timeline">Key Milestones</a></li>
+                    <li><a href="#timeline">Chronology</a></li>
                     <li><a href="#legacy">Legacy</a></li>
                 </ul>
             </nav>
@@ -214,20 +298,20 @@
     <section class="hero" id="home">
         <div class="container">
             <h1>The Capital of the Age of Enlightenment</h1>
-            <p>Exploring the history of Maharishi Mahesh Yogi's global headquarters above Lake Lucerne.</p>
+            <p>Exploring the history of Maharishi Mahesh Yogi's global headquarters high above Lake Lucerne.</p>
         </div>
     </section>
 
-    <section>
+    <section id="history">
         <div class="container">
             <div class="split-layout">
                 <div class="split-text">
                     <h2>A Mountain Sanctuary</h2>
-                    <p>For over two decades, the quiet Swiss village of Seelisberg was the epicenter of a global movement. High above the Rütli meadow, the historic Grand Hotel Sonnenberg was transformed into the international headquarters for Maharishi Mahesh Yogi and the Transcendental Meditation organization.</p>
-                    <p>From this vantage point, major international courses were held, global initiatives were launched, and the "World Government of the Age of Enlightenment" was established, drawing thousands of seekers, scientists, and leaders to the Swiss Alps.</p>
+                    <p>For over two decades, the quiet Swiss village of Seelisberg served as the unlikely epicenter of a global spiritual movement. High above the historic Rütli meadow, the vast Grand Hotel Sonnenberg was transformed into the international headquarters for Maharishi Mahesh Yogi.</p>
+                    <p>From this vantage point, major international teacher training courses were held, global initiatives were launched, and the "World Government of the Age of Enlightenment" was formally established, drawing thousands of seekers, scientists, and leaders to the crisp air of the Swiss Alps.</p>
                 </div>
                 <div class="split-image">
-                    <img src="https://via.placeholder.com/600x400/cfb06d/ffffff?text=Maharishi+in+Seelisberg+c.1975" alt="Maharishi in Seelisberg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Maharishi_Mahesh_Yogi_roughly_1979.jpg" alt="Maharishi Mahesh Yogi speaking, circa 1979">
                 </div>
             </div>
         </div>
@@ -238,42 +322,42 @@
             <h2 class="section-title">Chronology of an Era</h2>
             
             <div class="timeline-item">
-                <div class="timeline-date">Early 1970s</div>
+                <div class="timeline-date">c. 1972</div>
                 <div class="timeline-content">
                     <h3>Acquisition of the Sonnenberg</h3>
-                    <p>The TM movement acquires the historic, albeit aging, Grand Hotel Sonnenberg. Its isolated location and stunning vistas over Lake Lucerne make it an ideal location for deep meditation courses and administrative focus.</p>
+                    <p>The movement acquires the massive, historic Grand Hotel Sonnenberg. Its isolated location offering stunning vistas over Lake Lucerne made it an ideal location for deep meditation courses and focused administrative work away from the world's distractions.</p>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-date">1975</div>
                 <div class="timeline-content">
-                    <h3>The Dawn of the Age of Enlightenment</h3>
-                    <p>Maharishi inaugurates the "Dawn of the Age of Enlightenment" in Seelisberg. This marks a shift towards large-scale global initiatives aimed at creating societal coherence.</p>
+                    <h3>Inaugurating the "Dawn"</h3>
+                    <p>Maharishi inaugurates the "Dawn of the Age of Enlightenment" in Seelisberg. This marked a significant pivot towards large-scale global initiatives aimed at creating societal coherence through group meditation practice.</p>
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-date">Late 1970s</div>
                 <div class="timeline-content">
-                    <h3>Peak Activity & Global Assemblies</h3>
-                    <p>Seelisberg bustles with activity. The hotel is often filled to capacity with international course participants. The "World Government" is formally established here, issuing its own currency and passports as symbolic gestures of a borderless world of consciousness.</p>
+                    <h3>The Peak Years</h3>
+                    <p>Seelisberg bustles with intense activity. The hotel is filled to capacity with international course participants. The "World Government" is established here, issuing symbolic currency and passports reflecting a borderless world of consciousness.</p>
                 </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-date">1980s</div>
+                <div class="timeline-date">1980s - 1990s</div>
                 <div class="timeline-content">
-                    <h3>The Shift to Vlodrop</h3>
-                    <p>While Seelisberg remained significant, the movement's central focus began to gradually shift towards the new campus in Vlodrop, Netherlands, which offered more space for expansion. Seelisberg remained a key location for specific high-level assemblies.</p>
+                    <h3>The Gradual Shift</h3>
+                    <p>While Seelisberg remained symbolically important, the operational center gradually shifted towards the new campus in Vlodrop, Netherlands (MERU), which offered more room for expansion. Seelisberg continued to host specific high-level assemblies.</p>
                 </div>
             </div>
 
              <div class="timeline-item">
-                <div class="timeline-date">Post-1990</div>
+                <div class="timeline-date">Post-2000</div>
                 <div class="timeline-content">
-                    <h3>End of an Era</h3>
-                    <p>The movement eventually divested the Sonnenberg property. The golden era of Seelisberg as the center of the TM world concluded, leaving behind a rich historical legacy in the Swiss mountains.</p>
+                    <h3>End of the Sonnenberg Chapter</h3>
+                    <p>The movement eventually divested the massive Sonnenberg property, which had become difficult to maintain. The golden era of Seelisberg as the center of the TM world concluded, leaving behind a rich historical legacy.</p>
                 </div>
             </div>
         </div>
@@ -281,15 +365,14 @@
 
     <section id="legacy">
         <div class="container">
-            <h2 class="section-title">The Legacy of the Place</h2>
-            <div class="split-layout">
+            <div class="split-layout reverse">
                 <div class="split-image">
-                     <img src="https://via.placeholder.com/600x400/0f3057/ffffff?text=View+over+Lake+Lucerne" alt="View from Sonnenberg">
+                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Ruetli_ur.jpg/1280px-Ruetli_ur.jpg" alt="View of the Rütli meadow looking down from Seelisberg">
                 </div>
                 <div class="split-text">
                     <h3>Echoes of Enlightenment</h3>
-                    <p>Today, the physical presence of the movement in Seelisberg has faded, but its historical footprint remains. For thousands of people around the world, Seelisberg represents a pivotal time of intense learning, hope for global peace, and proximity to Maharishi.</p>
-                    <p>This archive serves to document the unique convergence of Swiss alpine history and the peak years of a global spiritual phenomenon.</p>
+                    <p>Today, the physical presence of the movement in the village has largely faded, but its historical footprint remains significant. The location itself, perched above the birthplace of the Swiss Confederation (the Rütli), added a layer of historical gravity to Maharishi's mission.</p>
+                    <p>For thousands around the world, Seelisberg represents a pivotal time of intense learning, hope for global peace, and proximity to Maharishi during the movement's most expansive phase.</p>
                 </div>
             </div>
         </div>
@@ -297,9 +380,9 @@
 
     <footer>
         <div class="container">
-            <div class="logo" style="margin-bottom: 1rem;">The Seelisberg Archive</div>
+            <div class="logo">The Seelisberg Archive</div>
             <p>© 2023 Historical Documentation Project. All rights reserved.</p>
-            <p class="disclaimer">Disclaimer: This is an unofficial historical archive project dedicated to documenting the history of the TM movement in Seelisberg. It is not directly affiliated with the official Transcendental Meditation organization.</p>
+            <p class="disclaimer">Image Credits: Images used are from Wikimedia Commons (Public Domain or Creative Commons BY-SA). This is an unofficial historical mockup project dedicated to documenting the history of the TM movement in Seelisberg for educational purposes. It is not affiliated with the official Transcendental Meditation organization.</p>
         </div>
     </footer>
 

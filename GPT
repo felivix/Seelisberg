@@ -1,0 +1,1245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seelisberg & Maharishi’s Movement — History (Mockup)</title>
+  <meta name="description" content="A mockup website presenting the history of Maharishi’s Movement in Seelisberg: timeline, milestones, projects, people, archives, and visits." />
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.90);
+      --muted: rgba(255,255,255,.68);
+      --faint: rgba(255,255,255,.40);
+      --brand: #8ae6ff;
+      --brand2: #c4a6ff;
+      --ok: #a6ffcf;
+      --warning: #ffd18a;
+      --shadow: 0 18px 60px rgba(0,0,0,.40);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1140px;
+      --ring: 0 0 0 3px rgba(138,230,255,.18);
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height: 100%; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 18% 12%, rgba(138,230,255,.18), transparent 60%),
+                  radial-gradient(900px 550px at 70% 18%, rgba(196,166,255,.14), transparent 55%),
+                  radial-gradient(1100px 680px at 50% 92%, rgba(166,255,207,.10), transparent 60%),
+                  var(--bg);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{
+      outline: none;
+      box-shadow: var(--ring);
+      border-radius: 10px;
+    }
+
+    .wrap{ width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+
+    /* Header */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,16,32,.86), rgba(11,16,32,.52));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+    .brandmark{
+      display: flex; align-items: center; gap: 10px;
+      min-width: 220px;
+    }
+    .logo{
+      width: 36px; height: 36px; border-radius: 12px;
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.85), transparent 60%),
+        linear-gradient(135deg, rgba(138,230,255,.95), rgba(196,166,255,.85));
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    }
+    .brandmark strong{ font-size: 14px; letter-spacing: .2px; display:block; }
+    .brandmark span{ font-size: 12px; color: var(--muted); display:block; margin-top: 2px; }
+
+    nav ul{
+      list-style: none; padding: 0; margin: 0;
+      display: flex; align-items: center; gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+    }
+    nav a:hover{
+      color: var(--text);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.08);
+    }
+
+    .navActions{
+      display:flex; align-items:center; gap: 10px;
+    }
+    .pill{
+      display:flex; align-items:center; gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .pill:hover{ background: rgba(255,255,255,.06); color: var(--text); }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(138,230,255,.18), rgba(196,166,255,.14));
+      color: var(--text);
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .btn:hover{
+      border-color: rgba(255,255,255,.18);
+      background: linear-gradient(135deg, rgba(138,230,255,.22), rgba(196,166,255,.18));
+    }
+    .btn.secondary{
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border-color: rgba(255,255,255,.12);
+      box-shadow: none;
+      font-weight: 600;
+    }
+
+    /* Hero */
+    .hero{
+      padding: 44px 0 22px;
+    }
+    .heroGrid{
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .card{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .heroMain{
+      padding: 26px 26px 22px;
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+    }
+    .heroMain::before{
+      content:"";
+      position:absolute; inset: -40% -25% auto auto;
+      width: 380px; height: 380px; border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(138,230,255,.35), rgba(196,166,255,.15) 55%, transparent 70%);
+      filter: blur(1px);
+      pointer-events:none;
+    }
+    .kicker{
+      display:flex; align-items:center; gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .dot{
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 6px rgba(138,230,255,.12);
+    }
+    h1{
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.05;
+      letter-spacing: -.6px;
+    }
+    .lead{
+      margin: 14px 0 18px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 60ch;
+    }
+    .heroCtas{
+      display:flex; gap: 10px; flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .mini{
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .stat{
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .stat b{ display:block; font-size: 16px; }
+    .stat span{ color: var(--muted); font-size: 12px; }
+
+    .heroSide{
+      padding: 18px;
+      overflow:hidden;
+      position: relative;
+      min-height: 320px;
+    }
+    .photo{
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+        radial-gradient(120px 80px at 25% 30%, rgba(138,230,255,.25), transparent 60%),
+        radial-gradient(120px 80px at 65% 40%, rgba(196,166,255,.22), transparent 60%),
+        radial-gradient(160px 120px at 50% 80%, rgba(166,255,207,.18), transparent 60%);
+      min-height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+    .photo::after{
+      content:"Seelisberg (placeholder image)";
+      position:absolute; left: 14px; bottom: 12px;
+      font-size: 12px; color: rgba(255,255,255,.78);
+      padding: 6px 10px; border-radius: 999px;
+      background: rgba(0,0,0,.30);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .sideList{
+      margin-top: 14px;
+      display:flex; flex-direction: column; gap: 10px;
+    }
+    .sideItem{
+      padding: 12px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.09);
+    }
+    .sideItem b{ display:block; font-size: 13px; }
+    .sideItem span{ display:block; font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    /* Sections */
+    section{ padding: 26px 0; }
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .sectionHead h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .sectionHead p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 70ch;
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .panel{
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,.20);
+    }
+    .panel h3{
+      margin:0 0 6px;
+      font-size: 14px;
+      letter-spacing: -.2px;
+    }
+    .panel p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .tagRow{ margin-top: 12px; display:flex; flex-wrap: wrap; gap: 8px; }
+    .tag{
+      font-size: 11px;
+      color: rgba(255,255,255,.78);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+
+    /* Timeline */
+    .timelineControls{
+      display:flex; align-items:center; justify-content: space-between;
+      gap: 12px;
+      margin: 10px 0 14px;
+      flex-wrap: wrap;
+    }
+    .search{
+      flex: 1;
+      min-width: 240px;
+      display:flex; gap: 10px; align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .search input{
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--text);
+      font-size: 13px;
+    }
+    .search .hint{ color: var(--faint); font-size: 12px; white-space: nowrap; }
+
+    .filters{
+      display:flex; gap: 10px; align-items:center;
+      flex-wrap: wrap;
+    }
+    select{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .timeline{
+      position: relative;
+      padding: 10px 0 2px;
+    }
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left: 16px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(138,230,255,.55), rgba(196,166,255,.35), rgba(255,255,255,.02));
+      opacity: .75;
+    }
+    .event{
+      position: relative;
+      padding: 12px 12px 12px 52px;
+      margin: 10px 0;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+    .event::before{
+      content:"";
+      position:absolute;
+      left: 10px; top: 18px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(138,230,255,.95), rgba(196,166,255,.85));
+      box-shadow: 0 0 0 6px rgba(138,230,255,.12);
+    }
+    .eventTop{
+      display:flex; align-items: baseline; justify-content: space-between;
+      gap: 10px; flex-wrap: wrap;
+    }
+    .date{
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .event h4{
+      margin: 4px 0 6px;
+      font-size: 14px;
+      letter-spacing: -.2px;
+    }
+    .event p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .eventActions{
+      display:flex; gap: 10px; flex-wrap: wrap;
+    }
+    .linkBtn{
+      display:inline-flex; align-items:center; gap: 8px;
+      font-size: 12px;
+      color: rgba(255,255,255,.85);
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      cursor: pointer;
+    }
+    .linkBtn:hover{ background: rgba(255,255,255,.06); }
+
+    /* Quote */
+    blockquote{
+      margin:0;
+      padding: 18px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(135deg, rgba(138,230,255,.10), rgba(196,166,255,.08));
+      box-shadow: 0 14px 50px rgba(0,0,0,.25);
+    }
+    blockquote p{
+      margin:0;
+      color: rgba(255,255,255,.88);
+      font-size: 14px;
+    }
+    blockquote footer{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .tile{
+      height: 130px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+        radial-gradient(120px 80px at 30% 30%, rgba(138,230,255,.24), transparent 60%),
+        radial-gradient(120px 80px at 70% 50%, rgba(196,166,255,.20), transparent 60%);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .tile span{
+      position:absolute;
+      left: 10px; bottom: 10px;
+      font-size: 12px;
+      color: rgba(255,255,255,.85);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.28);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    /* Footer */
+    footer{
+      padding: 28px 0 36px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .footGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .smallLinks{
+      display:flex; flex-wrap: wrap; gap: 10px;
+      justify-content: flex-end;
+    }
+    .smallLinks a{
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .smallLinks a:hover{ color: var(--text); background: rgba(255,255,255,.05); }
+
+    /* Modal */
+    .modalBack{
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.62);
+      display:none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 80;
+    }
+    .modal{
+      width: min(820px, 100%);
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(15,20,40,.92);
+      box-shadow: 0 30px 90px rgba(0,0,0,.65);
+      overflow: hidden;
+    }
+    .modalHead{
+      display:flex; align-items:center; justify-content: space-between;
+      gap: 10px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .modalHead b{ font-size: 13px; }
+    .x{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+    .x:hover{ background: rgba(255,255,255,.07); }
+    .modalBody{ padding: 16px; }
+    .modalBody p{ margin: 0 0 10px; color: var(--muted); font-size: 13px; }
+    .modalMeta{
+      display:flex; gap: 10px; flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .grid3{ grid-template-columns: 1fr; }
+      .grid2{ grid-template-columns: 1fr; }
+      .gallery{ grid-template-columns: repeat(2, 1fr); }
+      .footGrid{ grid-template-columns: 1fr; }
+      .smallLinks{ justify-content: flex-start; }
+      .brandmark{ min-width: auto; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brandmark">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <strong>Seelisberg & Maharishi’s Movement</strong>
+        <span>History • Timeline • Archive (Mockup)</span>
+      </div>
+    </div>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#milestones">Milestones</a></li>
+        <li><a href="#archive">Archive</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+
+    <div class="navActions">
+      <button class="pill" id="toggleMode" type="button" title="Toggle contrast">
+        ◐ <span>Contrast</span>
+      </button>
+      <a class="btn" href="#visit" role="button">Plan a Visit →</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap heroGrid">
+      <div class="card heroMain">
+        <div class="kicker"><span class="dot"></span> A place with a story worth preserving</div>
+        <h1>From quiet beginnings to global ripple effects — the Seelisberg chapter.</h1>
+        <p class="lead">
+          This is a clean, modern mockup you can use as a foundation for a website about the history of Maharishi’s
+          Movement in Seelisberg. The content below is intentionally written as structured placeholders so you can
+          insert verified dates, names, institutions, photos, and references.
+        </p>
+
+        <div class="heroCtas">
+          <a class="btn" href="#timeline" role="button">Explore the timeline</a>
+          <a class="btn secondary" href="#archive" role="button">Open the archive</a>
+          <button class="btn secondary" type="button" id="openIntro">How to fill this site</button>
+        </div>
+
+        <div class="mini" role="group" aria-label="Highlights">
+          <div class="stat">
+            <b id="statYears">—</b>
+            <span>Years covered</span>
+          </div>
+          <div class="stat">
+            <b id="statEvents">—</b>
+            <span>Timeline events</span>
+          </div>
+          <div class="stat">
+            <b>Mockup</b>
+            <span>Ready for real data</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card heroSide">
+        <div class="photo" aria-label="Seelisberg placeholder image"></div>
+        <div class="sideList">
+          <div class="sideItem">
+            <b>What this page is for</b>
+            <span>A public-facing narrative + a structured archive for documents, photos, and oral history.</span>
+          </div>
+          <div class="sideItem">
+            <b>What you’ll replace</b>
+            <span>Years, names, institutions, citations, and media. Keep the structure, swap the content.</span>
+          </div>
+          <div class="sideItem">
+            <b>Best next upgrade</b>
+            <span>Add a “Sources” database (JSON/CSV) so every claim links to a document or reference.</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="wrap">
+      <div class="sectionHead">
+        <div>
+          <h2>Story, in chapters</h2>
+          <p>
+            A good history site is not a list of dates. It’s a guided journey: context → turning points → lived impact → sources.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="panel">
+          <h3>Chapter 1 — Setting & context</h3>
+          <p>
+            Why Seelisberg? What was happening locally and internationally? What made this place strategically and culturally important?
+          </p>
+          <div class="tagRow">
+            <span class="tag">Geography</span><span class="tag">Local partners</span><span class="tag">Cultural context</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Chapter 2 — Establishment</h3>
+          <p>
+            The first concrete steps: early groups, first facilities, first programs, and how the work became sustainable.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Founding</span><span class="tag">Facilities</span><span class="tag">Programs</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Chapter 3 — Expansion & legacy</h3>
+          <p>
+            Key moments that shaped long-term direction: institutional growth, visiting speakers, innovations, outreach, and community impact.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Institutions</span><span class="tag">Education</span><span class="tag">Public engagement</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="height:14px"></div>
+
+      <blockquote>
+        <p>
+          “A history worth publishing is a history that can be checked.” Add sources beneath every major claim: scanned documents,
+          minutes, newspaper clippings, photos, and interviews with dates.
+        </p>
+        <footer>Editorial note (mockup) • Replace with a verified quote + attribution</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="wrap">
+      <div class="sectionHead">
+        <div>
+          <h2>Interactive timeline</h2>
+          <p>
+            Filter by decade and search by keyword. Click “Read more” to open details.
+          </p>
+        </div>
+      </div>
+
+      <div class="timelineControls">
+        <div class="search" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="q" type="search" placeholder="Search: e.g., ‘course’, ‘center’, ‘conference’, ‘education’…" />
+          <span class="hint" id="resultHint">—</span>
+        </div>
+
+        <div class="filters">
+          <label class="pill" for="decadeSelect" style="cursor:default">
+            <span aria-hidden="true">⏳</span> <span>Decade</span>
+          </label>
+          <select id="decadeSelect" aria-label="Filter by decade">
+            <option value="all">All decades</option>
+          </select>
+
+          <button class="pill" type="button" id="resetBtn">↺ Reset</button>
+        </div>
+      </div>
+
+      <div class="timeline" id="timelineList" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- MILESTONES / IMPACT -->
+  <section id="milestones">
+    <div class="wrap">
+      <div class="sectionHead">
+        <div>
+          <h2>Milestones & impact (structure)</h2>
+          <p>
+            Replace these with verified numbers, outcomes, program names, and citations.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="panel">
+          <h3>Institutions & facilities</h3>
+          <p>
+            Summarize what existed in Seelisberg in each era: facilities, hosting capability, training programs, and affiliated initiatives.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Centers</span><span class="tag">Retreats</span><span class="tag">Training</span><span class="tag">Local collaboration</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Public-facing outreach</h3>
+          <p>
+            Highlight outreach: public talks, educational partnerships, cultural programs, press coverage, and community events.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Events</span><span class="tag">Media</span><span class="tag">Education</span><span class="tag">Community</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Human stories</h3>
+          <p>
+            Short profiles: organizers, teachers, participants, community allies — with consent and quotes.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Oral history</span><span class="tag">Interviews</span><span class="tag">Profiles</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Evidence & sources</h3>
+          <p>
+            Keep a “Sources” section where every major statement links to a document or an archived reference.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Citations</span><span class="tag">Documents</span><span class="tag">Photos</span><span class="tag">Minutes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHIVE -->
+  <section id="archive">
+    <div class="wrap">
+      <div class="sectionHead">
+        <div>
+          <h2>Archive preview</h2>
+          <p>
+            This is where you’d host PDFs, photos, scans, and interview clips — organized and searchable.
+          </p>
+        </div>
+        <a class="pill" href="#visit">Jump to “Visit” →</a>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <div class="tile" data-title="Photo collection (placeholder)"><span>Photos</span></div>
+        <div class="tile" data-title="Scanned documents (placeholder)"><span>Documents</span></div>
+        <div class="tile" data-title="Press & media (placeholder)"><span>Media</span></div>
+        <div class="tile" data-title="Interviews & oral history (placeholder)"><span>Interviews</span></div>
+      </div>
+
+      <div style="height:14px"></div>
+
+      <div class="grid3">
+        <div class="panel">
+          <h3>Recommended archive structure</h3>
+          <p>
+            /archive/<br/>
+            &nbsp;&nbsp;photos/YYYY/<br/>
+            &nbsp;&nbsp;documents/YYYY/<br/>
+            &nbsp;&nbsp;press/YYYY/<br/>
+            &nbsp;&nbsp;interviews/YYYY/<br/>
+            Keep a single index file (JSON) that lists all items + metadata.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Metadata fields (minimum)</h3>
+          <p>
+            Title, date, location, people, tags, source (where it came from), rights/consent, and a short abstract.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Editorial rules</h3>
+          <p>
+            Every claim that matters should link to a source. Where sources disagree, show both and explain the uncertainty.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT / CTA -->
+  <section id="visit">
+    <div class="wrap">
+      <div class="sectionHead">
+        <div>
+          <h2>Visit Seelisberg</h2>
+          <p>
+            A simple CTA section: how to come, what visitors can expect, and how to contribute historical material.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="panel">
+          <h3>Plan a visit (placeholder)</h3>
+          <p>
+            Add practical info: seasonal access, travel routes, contact form, event calendar, and visitor guidelines.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Directions</span><span class="tag">Schedule</span><span class="tag">Contact</span>
+          </div>
+          <div style="height:12px"></div>
+          <button class="btn" type="button" id="openVisit">Open visit details</button>
+          <button class="btn secondary" type="button" id="openDonate">Contribute materials</button>
+        </div>
+
+        <div class="panel">
+          <h3>Contribute to the history</h3>
+          <p>
+            Invite people to submit scans, photos, and interviews. Explain how you verify, archive, and credit contributions.
+          </p>
+          <div class="tagRow">
+            <span class="tag">Submit files</span><span class="tag">Consent</span><span class="tag">Credits</span><span class="tag">Verification</span>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <form id="mockForm" onsubmit="return false;">
+            <div style="display:grid; gap:10px;">
+              <input style="padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--text);"
+                     placeholder="Your name (mock form)" />
+              <input style="padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--text);"
+                     placeholder="Email (mock form)" />
+              <button class="btn" type="button" id="mockSubmit">Send (demo)</button>
+              <div id="mockToast" style="display:none;color:var(--ok);font-size:12px;">✓ Demo only — wire this to your real form endpoint.</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footGrid">
+    <div>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div class="logo" aria-hidden="true" style="width:28px;height:28px;border-radius:10px;"></div>
+        <div>
+          <b style="color:rgba(255,255,255,.86)">Seelisberg & Maharishi’s Movement — History</b><br/>
+          <span>Mockup site • Replace placeholders with verified content + sources</span>
+        </div>
+      </div>
+      <div style="margin-top:10px; color: rgba(255,255,255,.55)">
+        Tip: keep one “Sources” dataset and link everything to it. That’s how your history stays credible.
+      </div>
+    </div>
+
+    <div class="smallLinks" aria-label="Footer links">
+      <a href="#timeline">Timeline</a>
+      <a href="#archive">Archive</a>
+      <a href="#visit">Visit</a>
+      <a href="#story">Story</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modalBack" id="modalBack" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modalHead">
+      <b id="modalTitle">Details</b>
+      <button class="x" type="button" id="modalClose">Close ✕</button>
+    </div>
+    <div class="modalBody">
+      <p id="modalText">—</p>
+      <div class="modalMeta" id="modalMeta"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ----------------------------
+  // Timeline data (PLACEHOLDERS)
+  // Replace these with verified items + citations.
+  // ----------------------------
+  const events = [
+    {
+      date: "1960s (placeholder)",
+      year: 1965,
+      title: "First early gatherings in the region",
+      summary: "Short description of early meetings and why Seelisberg mattered in that period. Add sources.",
+      tags: ["founding", "community", "context"],
+      details: [
+        "What happened (verifiable statement #1) — link to a document or interview.",
+        "What changed after this moment (verifiable statement #2).",
+        "Who was involved (names + roles + consent)."
+      ]
+    },
+    {
+      date: "1970s (placeholder)",
+      year: 1974,
+      title: "Programs become structured and repeatable",
+      summary: "Courses/retreats become a regular rhythm. Add location details, hosts, and program formats.",
+      tags: ["programs", "training", "facilities"],
+      details: [
+        "Program names, frequency, capacity.",
+        "Facilities used and how they evolved.",
+        "Citations: meeting minutes, flyers, press clipping."
+      ]
+    },
+    {
+      date: "1980s (placeholder)",
+      year: 1983,
+      title: "Institutional milestone in Seelisberg",
+      summary: "An institutional shift: formal organization, property, or long-term partnership. Add specifics + sources.",
+      tags: ["institution", "milestone"],
+      details: [
+        "Legal or organizational step (verified).",
+        "Why it mattered (impact).",
+        "Primary sources (documents/records)."
+      ]
+    },
+    {
+      date: "1990s (placeholder)",
+      year: 1992,
+      title: "Public-facing outreach grows",
+      summary: "More public events, collaborations, and media presence. Add dates, partners, and outcomes.",
+      tags: ["outreach", "media", "public"],
+      details: [
+        "Events: titles, speakers, attendance (if known).",
+        "Partnerships: institutions and context.",
+        "Media: links/citations."
+      ]
+    },
+    {
+      date: "2000s (placeholder)",
+      year: 2006,
+      title: "Modernization and new formats",
+      summary: "New communication channels, renewed programming, or updated infrastructure. Add factual details.",
+      tags: ["modernization", "infrastructure"],
+      details: [
+        "Facilities upgrade (what/when).",
+        "New course formats or audiences.",
+        "Sources: photos, invoices, newsletters (as appropriate)."
+      ]
+    },
+    {
+      date: "2010s (placeholder)",
+      year: 2017,
+      title: "Archiving & storytelling becomes intentional",
+      summary: "A deliberate effort to collect documents, interviews, and produce coherent narrative with sources.",
+      tags: ["archive", "storytelling", "sources"],
+      details: [
+        "Archive policy and standards.",
+        "Consent and privacy handling.",
+        "How to contribute materials."
+      ]
+    },
+    {
+      date: "2020s (placeholder)",
+      year: 2024,
+      title: "A new wave of public interest",
+      summary: "New audiences, events, or collaborations. Replace with verified developments and references.",
+      tags: ["renewal", "community"],
+      details: [
+        "What drove interest (context).",
+        "Programs and outcomes.",
+        "Sources: announcements, recordings, press."
+      ]
+    }
+  ];
+
+  // ----------------------------
+  // Render timeline + filters
+  // ----------------------------
+  const timelineList = document.getElementById("timelineList");
+  const decadeSelect = document.getElementById("decadeSelect");
+  const q = document.getElementById("q");
+  const resultHint = document.getElementById("resultHint");
+
+  function decadeOf(year){
+    return Math.floor(year / 10) * 10;
+  }
+
+  function buildDecadeOptions(){
+    const decades = Array.from(new Set(events.map(e => decadeOf(e.year)))).sort((a,b)=>a-b);
+    decades.forEach(d => {
+      const opt = document.createElement("option");
+      opt.value = String(d);
+      opt.textContent = `${d}s`;
+      decadeSelect.appendChild(opt);
+    });
+  }
+
+  function matchesQuery(evt, query){
+    if(!query) return true;
+    const hay = [
+      evt.date, evt.title, evt.summary, (evt.tags||[]).join(" "), (evt.details||[]).join(" ")
+    ].join(" ").toLowerCase();
+    return hay.includes(query.toLowerCase());
+  }
+
+  function matchesDecade(evt, decade){
+    if(decade === "all") return true;
+    return decadeOf(evt.year) === Number(decade);
+  }
+
+  function render(){
+    const decade = decadeSelect.value;
+    const query = q.value.trim();
+    const filtered = events
+      .filter(e => matchesDecade(e, decade))
+      .filter(e => matchesQuery(e, query))
+      .sort((a,b)=>a.year-b.year);
+
+    timelineList.innerHTML = "";
+    filtered.forEach(evt => {
+      const el = document.createElement("article");
+      el.className = "event";
+      el.innerHTML = `
+        <div class="eventTop">
+          <div class="date">${evt.date}</div>
+          <div class="tagRow" style="margin:0">
+            ${(evt.tags||[]).slice(0,4).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}
+          </div>
+        </div>
+        <h4>${escapeHtml(evt.title)}</h4>
+        <p>${escapeHtml(evt.summary)}</p>
+        <div class="eventActions">
+          <button class="linkBtn" type="button" data-action="more">Read more</button>
+          <button class="linkBtn" type="button" data-action="cite">Add sources</button>
+        </div>
+      `;
+
+      el.querySelector('[data-action="more"]').addEventListener("click", () => openModal(evt));
+      el.querySelector('[data-action="cite"]').addEventListener("click", () => openModal({
+        title: "Add sources (recommended)",
+        summary: "For credibility, attach at least one primary source per event. Example sources: scanned flyers, minutes, photos with dates, press clippings, recordings, or verified interviews.",
+        tags: ["editorial", "verification", "archive"],
+        details: [
+          "Create a Sources index: each item has ID, title, date, author/origin, and file path/URL.",
+          "In each timeline event, store source IDs (not just links).",
+          "Where sources disagree, present both and explain uncertainty."
+        ]
+      }));
+
+      timelineList.appendChild(el);
+    });
+
+    resultHint.textContent = `${filtered.length} result${filtered.length===1?"":"s"}`;
+
+    // Stats
+    document.getElementById("statEvents").textContent = String(events.length);
+    const years = events.map(e=>e.year);
+    const minY = Math.min(...years), maxY = Math.max(...years);
+    document.getElementById("statYears").textContent = `${maxY - minY}+`;
+  }
+
+  // ----------------------------
+  // Modal
+  // ----------------------------
+  const modalBack = document.getElementById("modalBack");
+  const modalClose = document.getElementById("modalClose");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalText = document.getElementById("modalText");
+  const modalMeta = document.getElementById("modalMeta");
+
+  function openModal(evt){
+    modalTitle.textContent = evt.title || "Details";
+    modalText.textContent = evt.summary || "—";
+    modalMeta.innerHTML = "";
+
+    const items = [];
+    if(evt.date) items.push({k:"Date", v: evt.date});
+    if(evt.year) items.push({k:"Year", v: String(evt.year)});
+    if(evt.tags && evt.tags.length) items.push({k:"Tags", v: evt.tags.join(", ")});
+
+    items.forEach(it => {
+      const chip = document.createElement("div");
+      chip.className = "tag";
+      chip.textContent = `${it.k}: ${it.v}`;
+      modalMeta.appendChild(chip);
+    });
+
+    if(evt.details && evt.details.length){
+      const ul = document.createElement("ul");
+      ul.style.margin = "12px 0 0";
+      ul.style.color = "rgba(255,255,255,.75)";
+      ul.style.fontSize = "13px";
+      ul.style.paddingLeft = "18px";
+      evt.details.forEach(d => {
+        const li = document.createElement("li");
+        li.style.margin = "6px 0";
+        li.textContent = d;
+        ul.appendChild(li);
+      });
+      modalText.insertAdjacentElement("afterend", ul);
+      // remove previous ULs if any
+      const body = document.querySelector(".modalBody");
+      [...body.querySelectorAll("ul")].slice(0,-1).forEach(n => n.remove());
+    } else {
+      // remove ULs if any
+      const body = document.querySelector(".modalBody");
+      [...body.querySelectorAll("ul")].forEach(n => n.remove());
+    }
+
+    modalBack.style.display = "flex";
+  }
+
+  function closeModal(){
+    modalBack.style.display = "none";
+  }
+
+  modalClose.addEventListener("click", closeModal);
+  modalBack.addEventListener("click", (e)=>{ if(e.target === modalBack) closeModal(); });
+  window.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closeModal(); });
+
+  // ----------------------------
+  // Misc UI actions
+  // ----------------------------
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    decadeSelect.value = "all";
+    q.value = "";
+    render();
+  });
+
+  q.addEventListener("input", () => render());
+  decadeSelect.addEventListener("change", () => render());
+
+  document.getElementById("openIntro").addEventListener("click", () => openModal({
+    title: "How to fill this mockup",
+    summary: "Replace placeholders with verified content, then add a Sources index so every event can be checked.",
+    tags: ["setup", "editorial"],
+    details: [
+      "Step 1: Replace timeline events with real dates + short summaries.",
+      "Step 2: Create /archive/ and add documents/photos with consistent file naming.",
+      "Step 3: Build a sources.json file and link each timeline event to source IDs.",
+      "Step 4: Add a 'People' page if you want biographical profiles (with consent).",
+      "Step 5: Add multilingual content (e.g., DE/EN) if needed."
+    ]
+  }));
+
+  document.getElementById("openVisit").addEventListener("click", () => openModal({
+    title: "Visit details (placeholder)",
+    summary: "Add exact travel instructions, contact details, seasonal notes, and event schedule here.",
+    tags: ["visit", "logistics"],
+    details: [
+      "Public transport directions (nearest stations, bus routes).",
+      "Parking info, accessibility, and opening times.",
+      "Contact: email/phone + a contact form endpoint.",
+      "Calendar integration for events."
+    ]
+  }));
+
+  document.getElementById("openDonate").addEventListener("click", () => openModal({
+    title: "Contribute historical material (placeholder)",
+    summary: "Invite submissions and explain verification, permissions, and crediting clearly.",
+    tags: ["archive", "contributions"],
+    details: [
+      "What to submit: scans, photos, event flyers, minutes, recordings, written recollections.",
+      "How you handle consent and privacy (especially for living persons).",
+      "How submissions get verified and cited.",
+      "How contributors are credited."
+    ]
+  }));
+
+  document.getElementById("mockSubmit").addEventListener("click", () => {
+    const toast = document.getElementById("mockToast");
+    toast.style.display = "block";
+    setTimeout(()=> toast.style.display="none", 2200);
+  });
+
+  // Contrast toggle (simple)
+  document.getElementById("toggleMode").addEventListener("click", () => {
+    const root = document.documentElement;
+    const current = getComputedStyle(root).getPropertyValue("--bg").trim();
+    if(current === "#0b1020"){
+      root.style.setProperty("--bg", "#080b14");
+      root.style.setProperty("--panel", "rgba(255,255,255,.07)");
+      root.style.setProperty("--panel2", "rgba(255,255,255,.11)");
+    } else {
+      root.style.setProperty("--bg", "#0b1020");
+      root.style.setProperty("--panel", "rgba(255,255,255,.06)");
+      root.style.setProperty("--panel2", "rgba(255,255,255,.09)");
+    }
+  });
+
+  // Gallery tiles open modal
+  document.querySelectorAll(".tile").forEach(t => {
+    t.addEventListener("click", () => openModal({
+      title: t.getAttribute("data-title"),
+      summary: "In a real site, clicking here would open a filtered archive view.",
+      tags: ["archive", "placeholder"],
+      details: [
+        "Implement as /archive.html with filters (type, year, tags, people).",
+        "Store metadata in sources.json and render dynamically.",
+        "Add download / viewer for PDFs and images."
+      ]
+    }));
+  });
+
+  // Helpers
+  function escapeHtml(str){
+    return String(str)
+      .replaceAll("&","&amp;")
+      .replaceAll("<","&lt;")
+      .replaceAll(">","&gt;")
+      .replaceAll('"',"&quot;")
+      .replaceAll("'","&#039;");
+  }
+
+  // Init
+  buildDecadeOptions();
+  render();
+</script>
+</body>
+</html>
